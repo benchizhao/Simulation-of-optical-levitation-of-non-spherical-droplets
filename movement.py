@@ -57,9 +57,9 @@ def trans_acc(rays, incident_angle, tilt, t):
 
 def power_output(mode):
     if mode in ['c','const','constant']:
-        return 2.5
+        return input.power
     elif mode in ['noisy', 'n']:
-        return 2.5 * (1 + (np.random.normal(loc=0.0, scale=1.0, size=None)) / 100000) # noise
+        return input.power * (1 + (np.random.normal(loc=0.0, scale=1.0, size=None)) / 100000) # noise
 
 #prepare the function for ode solver
 def diff_ellipse(d_list, t):
@@ -108,17 +108,13 @@ if __name__ == '__main__':
     '''
     Plot 4 figures: x-position, x-velocity, y-position, y-velocity respect to time
     '''
-    f = open('pump air out-2.txt', 'rb')
+    f = open('test.txt', 'rb')
     d = pickle.load(f)
     f.close()
 
-    f = open('circle all on new code.txt', 'rb')
+    f = open('test.txt', 'rb')
     e = pickle.load(f)
     f.close()
-
-    # print(d)
-
-    # t = np.linspace(0, 0.05, 3000)
 
     plt.figure('')
     plt.plot(t, d[:, 0],'-', label='pump air out')
