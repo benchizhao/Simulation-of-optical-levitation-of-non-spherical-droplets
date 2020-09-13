@@ -109,6 +109,7 @@ RayTracing.py generates figure of how one individual ray propagtes in the system
 RaysTracing.py generates figure of how a bundle of rays propagte in the system, and a beam intensity distribution figure.
 Radiation_Force.py generates the figure of the relation between forces repects to the changing x or y.
 Torque.py, Buoyancy.py and Drag_force.py generate the corresonding values.
+ellipse.py will calculate the intersection position of ellipse and a line, as well as the slope of a tangential line of the ellipse.
 
 4. After testing these codes, we should run the movement.py, which is the core part for solving the Newton's second law.
 In this modules, forces and torques are prepared. In the function of diff_ellipse(d_list, t), we could change the laser power here,
